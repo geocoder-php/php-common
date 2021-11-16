@@ -75,7 +75,7 @@ final class StatefulGeocoder implements Geocoder
     /**
      * {@inheritdoc}
      */
-    public function reverse(float $latitude, float $longitude): Collection
+    public function reverse(?float $latitude = null, ?float $longitude = null): Collection
     {
         $query = ReverseQuery::fromCoordinates($latitude, $longitude)
             ->withLimit($this->limit);
